@@ -34,10 +34,6 @@ jobs:
     - name: change current dir
       # Build your program with the given configuration
       run: pwd && cd ${{github.workspace}}\DeepSpeech-jni && pwd && ls
-        
-    - name: configure build
-      # Build your program with the given configuration
-      run: cmake --configure .
       
     - name: build
       # Build your program with the given configuration
