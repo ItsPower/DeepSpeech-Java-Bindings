@@ -33,6 +33,10 @@ jobs:
       # Build your program with the given configuration
       run: pwd && cd ${{github.workspace}}\DeepSpeech-jni && pwd && ls
       
+    - name: conf build
+      # Build your program with the given configuration
+      run: cmake .     
+      
     - name: build
       # Build your program with the given configuration
       run: cmake --build .
