@@ -3,8 +3,6 @@ name: CMake
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -37,5 +35,5 @@ jobs:
       
     - name: build
       # Build your program with the given configuration
-      run: cmake --build .
+      run: cmake --trace build .
       
