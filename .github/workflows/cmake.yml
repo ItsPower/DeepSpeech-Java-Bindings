@@ -35,9 +35,9 @@ jobs:
       
     - name: conf build
       # Build your program with the given configuration
-      run: cmake .     
+      run: cd ${{github.workspace}}\DeepSpeech-jni && cmake .     
       
     - name: build
       # Build your program with the given configuration
-      run: cmake --build .
+      run: cmake --build . --target all
       
