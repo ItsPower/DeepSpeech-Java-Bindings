@@ -31,11 +31,15 @@ jobs:
         # The architecture of the package
         architecture: x64
         
-    - name: ChangeDir
+    - name: change current dir
       # Build your program with the given configuration
-      run: cd ${{github.workspace}}\DeepSpeech-jni && pwd
+      run: pwd && cd ${{github.workspace}}\DeepSpeech-jni && pwd && ls
+        
+    - name: configure build
+      # Build your program with the given configuration
+      run: cmake --configure .
       
-    - name: Build
+    - name: build
       # Build your program with the given configuration
       run: cmake --build .
       
