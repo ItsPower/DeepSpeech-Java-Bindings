@@ -30,8 +30,12 @@ jobs:
         java-package: 'jdk'
         # The architecture of the package
         architecture: x64
-
+        
+    - name: ChangeDir
+      # Build your program with the given configuration
+      run: cd ${{github.workspace}}\DeepSpeech-jni
+      
     - name: Build
       # Build your program with the given configuration
-      run: cmake build ${{github.workspace}}\DeepSpeech-jni --config ${{env.BUILD_TYPE}}
+      run: cmake build .
       
