@@ -28,16 +28,12 @@ jobs:
         java-package: 'jdk'
         # The architecture of the package
         architecture: x64
-        
-    - name: change current dir
-      # Build your program with the given configuration
-      run: pwd && cd ${{github.workspace}}\DeepSpeech-jni && pwd && ls
       
     - name: conf build
       # Build your program with the given configuration
-      run: cd ${{github.workspace}}\DeepSpeech-jni && cmake .     
+      run: cd ${{github.workspace}}\DeepSpeech-jni && cmake . -v    
       
     - name: build
       # Build your program with the given configuration
-      run: cmake --build . --target all
+      run: cd ${{github.workspace}}\DeepSpeech-jni && ls && cmake --build . -v --target all
       
