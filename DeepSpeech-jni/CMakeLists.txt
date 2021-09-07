@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.12.4)
 project(deepspeech-jni)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 set(CUDA_CONFIGURATION FALSE) # specify whether the jni library should use cuda
 
