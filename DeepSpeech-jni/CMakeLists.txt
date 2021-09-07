@@ -5,9 +5,9 @@ project(deepspeech-jni)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(CUDA_CONFIGURATION TRUE) # specify whether the jni library should use cuda
+set(CUDA_CONFIGURATION FALSE) # specify whether the jni library should use cuda
 
-set(PLATFORM linux) # define platform here. linux, win32, darwin etc so that $ENV{JAVA_HOME}/include/${PLATFORM} points to the location of "jni_md.h"
+set(PLATFORM win32) # define platform here. linux, win32, darwin etc so that $ENV{JAVA_HOME}/include/${PLATFORM} points to the location of "jni_md.h"
 
 if (DEFINED ANDROID_ABI AND CUDA_CONFIGURATION MATCHES TRUE)
     message("Cannot compile cuda jni for android! Building normal cpu configuration instead!")
