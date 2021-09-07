@@ -33,9 +33,9 @@ jobs:
         
     - name: ChangeDir
       # Build your program with the given configuration
-      run: cd ${{github.workspace}}\DeepSpeech-jni
+      run: cd ${{github.workspace}}\DeepSpeech-jni && pwd
       
     - name: Build
       # Build your program with the given configuration
-      run: cmake build .
+      run: cmake --build .
       
