@@ -6,6 +6,8 @@ project(deepspeech-jni)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
+message("hello build")
+
 set(CUDA_CONFIGURATION FALSE) # specify whether the jni library should use cuda
 
 set(PLATFORM win32) # define platform here. linux, win32, darwin etc so that $ENV{JAVA_HOME}/include/${PLATFORM} points to the location of "jni_md.h"
@@ -70,6 +72,7 @@ else ()
 endif ()
 
 if (NOT DEFINED ANDROID_ABI)
+    message("Linking deepspeech library for non android.")
     set(DS_LIBRARY_LOCATION ${CMAKE_SOURCE_DIR}/libs/${PLATFORM}/libdeepspeech_${DS_SUFFIX}.so)
 else ()
     message("Linking deepspeech library for android.")
